@@ -1,8 +1,7 @@
 {
-    "name": "com.binaryego.RuntimeTransformHandle",
+    "name": "com.binaryego.runtimetransformhandle",
     "displayName": "RuntimeTransformHandle",
     "version": "1.0.0",
-    "documentationUrl": "https://github.com/hmthangGitHub/RuntimeTransformHandle/tree/main/Assets/Plugins",
-    "description": "RuntimeTransformHandle",
+    "documentationUrl": "https://github.com/hmthangGitHub/RuntimeTransformHandle",
     "hideInEditor": false
   }
