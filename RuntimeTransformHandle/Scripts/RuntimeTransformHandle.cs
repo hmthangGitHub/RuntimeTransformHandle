@@ -16,6 +16,7 @@ namespace RuntimeHandle
         public Vector3 positionSnap = Vector3.zero;
         public float rotationSnap = 0;
         public Vector3 scaleSnap = Vector3.zero;
+        public float handleScale = 0.5f;
 
         public bool autoScale = false;
         public float autoScaleFactor = 1;
@@ -53,7 +54,7 @@ namespace RuntimeHandle
             switch (type)
             {
                 case HandleType.POSITION:
-                    _positionHandle = gameObject.AddComponent<PositionHandle>().Initialize(this);
+                    _positionHandle = gameObject.AddComponent<PositionHandle>().Initialize(this, handleScale);
                     break;
                 case HandleType.ROTATION:
                     _rotationHandle = gameObject.AddComponent<RotationHandle>().Initialize(this);

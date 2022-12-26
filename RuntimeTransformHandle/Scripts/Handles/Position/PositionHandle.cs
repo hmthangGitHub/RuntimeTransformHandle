@@ -12,7 +12,7 @@ namespace RuntimeHandle
         protected List<PositionAxis> _axes;
         protected List<PositionPlane> _planes;
 
-        public PositionHandle Initialize(RuntimeTransformHandle p_runtimeHandle)
+        public PositionHandle Initialize(RuntimeTransformHandle p_runtimeHandle, float scale)
         {
             _parentTransformHandle = p_runtimeHandle;
             transform.SetParent(_parentTransformHandle.transform, false);
@@ -31,6 +31,11 @@ namespace RuntimeHandle
                 _axes.Add(new GameObject().AddComponent<PositionAxis>()
                     .Initialize(_parentTransformHandle, Vector3.forward, Color.blue));
 
+            foreach (var axe in _axes)
+            {
+                axe.transform.localScale = Vector3.one * scale;
+            }
+            
             _planes = new List<PositionPlane>();
             
             if (_parentTransformHandle.axes == HandleAxes.XY || _parentTransformHandle.axes == HandleAxes.XYZ)
